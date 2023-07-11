@@ -1,0 +1,131 @@
+CCS PCH C Compiler, Version 5.090, 13314               01-dic.-20 09:44
+
+               Filename:   C:\Users\Martin Hdez\Desktop\18F4550\1 Bink\Blink led.lst
+
+               ROM used:   110 bytes (0%)
+                           Largest free fragment is 24462
+               RAM used:   5 (0%) at main() level
+                           6 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+2000:  GOTO   2038
+.................... /*
+.................... AUTOR: MICROSIDE TECHNOLOGY S.A. DE C.V.
+.................... FECHA: JUNIO 2019
+.................... */
+.................... 
+.................... /*
+.................... ---------------------------------------------------------------------------
+.................... La práctica consiste en controlar el encendido y apagado del LED incluido
+.................... en la tarjeta X-TRAINER
+.................... ---------------------------------------------------------------------------
+.................... */
+.................... 
+.................... #include <18F4550.h>                            //Incluye el microcontrolador con el que se va a trabajar 
+.................... //////////// Standard Header file for the PIC18F4550 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC18F4550
+.................... 
+.................... #list
+.................... 
+.................... #use delay(clock=48Mhz, crystal)                //Tipo de oscilador y frecuencia dependiendo del microcontrolador 
+*
+2010:  CLRF   FEA
+2012:  MOVLW  06
+2014:  MOVWF  FE9
+2016:  MOVF   FEF,W
+2018:  BZ    2036
+201A:  MOVLW  0F
+201C:  MOVWF  01
+201E:  CLRF   00
+2020:  DECFSZ 00,F
+2022:  BRA    2020
+2024:  DECFSZ 01,F
+2026:  BRA    201E
+2028:  MOVLW  8F
+202A:  MOVWF  00
+202C:  DECFSZ 00,F
+202E:  BRA    202C
+2030:  NOP   
+2032:  DECFSZ FEF,F
+2034:  BRA    201A
+2036:  RETURN 0
+.................... #build(reset=0x02000,interrupt=0x02008)         //Asignación de los vectores de reset e interrupción
+.................... #org 0x0000,0x1FFF {}                           //Reserva espacio en la memoria para la versión con bootloader
+.................... 
+.................... #define LED PIN_A1                              //Pin donde está conectado el LED del X-TRAINER
+.................... 
+.................... void SisInit(void)
+....................   {
+....................       set_tris_a(0XFD);                         //Pin RA1 como salida
+*
+2008:  MOVLW  FD
+200A:  MOVWF  F92
+200C:  GOTO   204A (RETURN)
+....................   }
+.................... 
+.................... void main(void)
+*
+2038:  CLRF   FF8
+203A:  BCF    FD0.7
+203C:  MOVF   FC1,W
+203E:  ANDLW  C0
+2040:  IORLW  0F
+2042:  MOVWF  FC1
+2044:  MOVLW  07
+2046:  MOVWF  FB4
+.................... 
+....................   {
+....................      SisInit ();
+2048:  BRA    2008
+....................      
+....................      while(1)
+.................... 
+....................            {
+....................                   output_HIGH (LED);            //Cambio de estado en el pin RA1
+204A:  BCF    F92.1
+204C:  BSF    F89.1
+....................                   delay_ms (500);               //Retardo
+204E:  MOVLW  02
+2050:  MOVWF  05
+2052:  MOVLW  FA
+2054:  MOVWF  06
+2056:  RCALL  2010
+2058:  DECFSZ 05,F
+205A:  BRA    2052
+....................                   output_LOW (LED);             //Cambio de estado en el pin RA1     
+205C:  BCF    F92.1
+205E:  BCF    F89.1
+....................                   delay_ms (500) ;              //Retardo
+2060:  MOVLW  02
+2062:  MOVWF  05
+2064:  MOVLW  FA
+2066:  MOVWF  06
+2068:  RCALL  2010
+206A:  DECFSZ 05,F
+206C:  BRA    2064
+206E:  BRA    204A
+....................            }
+.................... }
+.................... 
+2070:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: CC07   PLL12 CPUDIV1 NOUSBDIV HS FCMEN IESO
+   Word  2: 1E26   PUT BROWNOUT VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

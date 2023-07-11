@@ -1,0 +1,5 @@
+Compiling C:\Users\Martin Hdez\Desktop\18F4550\1 Bink\Blink led on 01-dic.-20 at 09:44
+>>> Warning 203 "C:\Users\Martin Hdez\Desktop\18F4550\1 Bink\Blink led.c" Line 30(1,1): Condition always TRUE
+      Memory usage:   ROM=0%      RAM=0% - 0%
+      0 Errors,  1 Warnings.
+Build Successful.
