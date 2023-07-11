@@ -5,16 +5,16 @@ FECHA: JUNIO 2019
 
 /*
 ---------------------------------------------------------------------------
-La pr·ctica consiste en controlar el encendido y apagado del LED incluido
+La pr√°ctica consiste en controlar el encendido y apagado del LED incluido
 en la tarjeta X-TRAINER
 ---------------------------------------------------------------------------
 */
 
 #include <18F45K50.h>                          //Incluye el microcontrolador con el que se va a trabajar 
 #use delay(internal=48Mhz)                     //Tipo de oscilador y frecuencia dependiendo del microcontrolador 
-#build(reset=0x02000,interrupt=0x02008)        //AsignaciÛn de los vectores de reset e interrupciÛn
-#org 0x0000,0x1FFF {}                          //Reserva espacio en la memoria para la versiÛn con bootloader
-#define LED PIN_A1                             //Pin donde est· conectado el LED de X-TRAINER
+#build(reset=0x02000,interrupt=0x02008)        //Asignaci√≥n de los vectores de reset e interrupci√≥n
+#org 0x0000,0x1FFF {}                          //Reserva espacio en la memoria para la versi√≥n con bootloader
+#define LED PIN_A1                             //Pin donde est√° conectado el LED de X-TRAINER
 
 void SisInit(void)
   {
