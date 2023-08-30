@@ -22,12 +22,12 @@ en la tarjeta X-TRAINER
 #define LED PIN_A4                             // Pin donde está conectado el LED de X-TRAINER
 
 void main( void ) {
-   set_tris_a( 0xEF );                        // Pin RA4 como salida
+   set_tris_a( 0b11101111 );                   // Pin RA4 como salida
 
    while ( 1 ) {
-      output_HIGH( LED );                    // Cambio de estado en el pin RA4
-      delay_ms( 500 );                       // Retardo
-      output_LOW( LED );                     // Cambio de estado en el pin RA4
-      delay_ms( 500 );                       // Retardo
+      output_HIGH( LED );                      // Cambio de estado en el pin RA4
+      delay_ms( 500 );                         // Retardo
+      output_LOW( LED );                       // Cambio de estado en el pin RA4
+      delay_ms( 500 );                         // Retardo
    }
 }
