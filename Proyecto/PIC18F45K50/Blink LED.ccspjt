@@ -1,7 +1,7 @@
 [PROJECT]
 Target=Blink LED.hex
-Processor_Text=PIC18F45K50
-CCSVersion=5.090
+Processor_Text=PIC18F4550
+CCSVersion=5.115d
 Compiler=PCH
 [Target Data]
 FileList=Blink LED.c
@@ -9,12 +9,9 @@ FileList=Blink LED.c
 Type=4
 [mru-list]
 1=Blink LED.c
-[Units]
-Count=1
-1=Blink LED (main)
 
 [defines]
-buildcount=1
+buildcount=2
 
 [Opened Files]
 1=Blink LED.c
@@ -22,7 +19,21 @@ t1=1
 Count=1
 
 [ProjectLog]
-Days=1
+Days=2
 D1=01-12-2020
 D1_L=1
 D1_L1=[35165]Project Closed.
+D2=30-08-2023
+D2_L=6
+D2_L1=[46063]Project Opened.
+D2_L2=[46112]Project Closed.
+D2_L3=[46122]Project Opened.
+D2_L4=[46498]Project Closed.
+D2_L5=[46689]Project Opened.
+D2_L6=[46971]Project Closed.
+
+[fileformats]
+forcecoff=0
+[Units]
+Count=1
+1=Blink LED (main)

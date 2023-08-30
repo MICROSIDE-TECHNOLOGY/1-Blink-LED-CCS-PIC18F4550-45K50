@@ -1,9 +1,9 @@
 
-ROM used:   126/32768 (0%)
-            130/32768 (0%) including unused fragments
+ROM used:   128/32768 (0%)
+            132/32768 (0%) including unused fragments
 
             0.1 Average locations per line
-            15.8 Average locations per statement
+            18.3 Average locations per statement
 
 RAM used:   5/2048 (0%) at main() level
             6/2048 (0%) worst case
@@ -13,35 +13,34 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   36     8 100  Blink LED.c
-  972     0   0  D:\Programas\PICC\Devices\18F45K50.h
+   34     7 100  Blink LED.c
+  988     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICCDEMO\Devices\18F45K50.h
 ----- -----
- 1008     8 Total
+ 1022     7 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
 0     40  16    1             @delay_ms1
-0      8   3    0     21  0.9  SisInit
-0     74  29    1    106  1.7  MAIN
- Inline         0    362  2.3  @cinit1
+0     84  33    1    113  1.7  main
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               3
-    Statements              8
-    Comments                193
-    Volume (V)              609
-    Difficulty (D)          5.1
-    Effort to implement (E) 3096
-    Time to implement (T)   3 minutes
+    Functions               1
+    Statements              7
+    Comments                203
+    Volume (V)              117
+    Difficulty (D)          1.5
+    Effort to implement (E) 175
+    Time to implement (T)   0 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   1
-    Maintainability (MI)    120
+    Maintainability (MI)    110
 
  Segment     Used  Free
 -----------  ----  ----
 00000-01FFE     0  8192  
 02000-02006     4  4  
-02008-07FFE   122  24446  
+02008-07FFE   124  24444  
 
 
 
