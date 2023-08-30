@@ -1,6 +1,6 @@
 [PROJECT]
 Target=Blink LED.hex
-Processor_Text=PIC18F4550
+Processor_Text=PIC18F45K50
 CCSVersion=5.115d
 Compiler=PCH
 [Target Data]
@@ -11,7 +11,7 @@ Type=4
 1=Blink LED.c
 
 [defines]
-buildcount=2
+buildcount=3
 
 [Opened Files]
 1=Blink LED.c
@@ -24,13 +24,21 @@ D1=01-12-2020
 D1_L=1
 D1_L1=[35165]Project Closed.
 D2=30-08-2023
-D2_L=6
+D2_L=10
 D2_L1=[46063]Project Opened.
 D2_L2=[46112]Project Closed.
 D2_L3=[46122]Project Opened.
 D2_L4=[46498]Project Closed.
 D2_L5=[46689]Project Opened.
 D2_L6=[46971]Project Closed.
+D2_L7=[47168]Project Opened.
+D2_L8=[47191]Started Editing.
+D2_L9=[47218]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D2_E=1
+D2_D=0
+D2_L10=[47218]Project Closed.
 
 [fileformats]
 forcecoff=0

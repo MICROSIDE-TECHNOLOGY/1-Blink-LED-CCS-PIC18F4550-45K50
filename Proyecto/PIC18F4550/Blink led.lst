@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.115d, 1               30-ago.-23 12:55
+CCS PCH C Compiler, Version 5.115d, 1               30-ago.-23 13:05
 Compiler operating in Evaluation Mode
 To obtain a fully enabled compiler visit www.ccsinfo.com/products
 
@@ -80,8 +80,8 @@ To obtain a fully enabled compiler visit www.ccsinfo.com/products
 203A:  MOVWF  FC1
 203C:  MOVLW  07
 203E:  MOVWF  FB4
-....................    set_tris_a( 0xF7 );                         // Pin RA4 como salida
-2040:  MOVLW  F7
+....................    set_tris_a( 0xEF );                         // Pin RA4 como salida
+2040:  MOVLW  EF
 2042:  MOVWF  F92
 .................... 
 ....................    while ( 1 ) {

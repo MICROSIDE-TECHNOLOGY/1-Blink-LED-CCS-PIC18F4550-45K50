@@ -11,7 +11,7 @@ Type=4
 1=Blink led.c
 
 [defines]
-buildcount=2
+buildcount=3
 
 [Opened Files]
 1=Blink led.c
@@ -24,9 +24,17 @@ D1=01-12-2020
 D1_L=1
 D1_L1=[35084]Project Closed.
 D2=30-08-2023
-D2_L=2
+D2_L=6
 D2_L1=[46505]Project Opened.
 D2_L2=[46682]Project Closed.
+D2_L3=[47066]Project Opened.
+D2_L4=[47115]Started Editing.
+D2_L5=[47161]Stopped Editing.
+TotalEdit=1
+TotalDebug=0
+D2_E=1
+D2_D=0
+D2_L6=[47161]Project Closed.
 
 [fileformats]
 forcecoff=0
